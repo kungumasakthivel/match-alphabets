@@ -98,14 +98,14 @@ export default function App() {
           <div>
             {
               cards.map(card => (
-                <IsEven key={card.key} card={card} />
+                <IsEven key={card.id} card={card} />
               ))
             }
           </div>
           <div>
             {
               cards.map(card => (
-                <NotEven key={card.key} card={card} />
+                <NotEven key={card.id} card={card} />
               ))
             }
           </div>
