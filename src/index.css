@@ -17,21 +17,42 @@ body {
 
 .scoreboard {
   display: flex;
-  justify-content: space-between;
-  width: 300px;
+  justify-content: center;
+  width: 100vw;
   margin-bottom: 10px;
+  gap: 20px;
 }
 
 .board {
   display: flex;
+  width: 100vw;
+  height: 70vh;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
   flex-wrap: wrap;
-  width: 300px;
-  gap: 10px;
+}
+
+.board-left {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.board-right {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 .card {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

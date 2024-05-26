@@ -76,17 +76,17 @@ export default function App() {
     setCards(shuffleArray([...initialCards]));
   };
 
-  function IsEven(card) {
-    if(card.isEven === false) {
-      <Card key={card.key} card={card} onClick={() => flipCard(card)} />
-    }
-  }
+  // function IsEven(card) {
+  //   if(card.isEven === false) {
+  //     <Card key={card.key} card={card} onClick={() => flipCard(card)} />
+  //   }
+  // }
 
-  function NotEven(card) {
-    if(card.isEven === true) {
-      <Card key={card.key} card={card} onClick={() => flipCard(card)} />
-    }
-  }
+  // function NotEven({card}) {
+  //   if(card.isEven === true) {
+  //     <Card key={card.key} card={card} onClick={() => flipCard(card)} />
+  //   }
+  // }
   return (
     <>
       <div className="scoreboard">
@@ -95,18 +95,24 @@ export default function App() {
         <button onClick={resetGame} >Reset Game</button>
       </div>
       <div className="board">
-          <div>
+          <div className='board-left'>
             {
-              cards.map(card => (
-                <IsEven key={card.id} card={card} />
-              ))
+              cards.map(card => {
+                if(card.isEven === false) {
+                  return <Card key={card.id} card={card} onClick={() => flipCard(card)} />
+                }
+                return null;
+              })
             }
           </div>
-          <div>
+          <div className='board-right'>
             {
-              cards.map(card => (
-                <NotEven key={card.id} card={card} />
-              ))
+              cards.map(card => {
+                if(card.isEven === true) {
+                  return <Card key={card.id} card={card} onClick={() => flipCard(card)} />
+                }
+                return null;
+              })
             }
           </div>
       </div>
